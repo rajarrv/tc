@@ -1,0 +1,59 @@
+#1. used ubuntu 14.04
+## This is OS I am Using
+#2. Install mongo 3
+## We need a DB to store ,I am comfortable with this DB
+#3. Install Django 1.5.*
+## I am comfortable with this python frame work for web application , so using this
+#4.  Intall pymongo
+## This package needs to connect to DB , mongo Django not stable , to implement Model 
+## layer we need to establsih connection to DB
+## and if mongo not available in local system need to mention credentials for api/models.mydb#MongoClient
+#5. Go to terminal in goto the path where project configured
+## execute the command -> python manage.py runserver
+## your server is up
+#6. to login first you need to create user or insert necessary fields into DB
+## I am sharing the code that can be useful to test each restAPI
+##import urllib2
+##import urllib
+##url_addr = 'http://localhost:8000/apis/insert/' #localhost:8000 depends on your DNS or ACtivedirectory 
+### dont use ip adress when you are using urllib2 to test your restful services
+### we can add validations for this API and password also needs some encryptionmechanisam
+##query_args = { 'user_name':'', 'pass_word':'bar','city':'bangalore' }
+##encoded_args = urllib.urlencode(query_args)
+##response = urllib2.urlopen(url_addr,encoded_args)
+##print response.read()
+#7. Login with json payload
+##import urllib2
+##import urllib
+##url_addr = 'http://localhost:8000/apis/login/'
+##query_args = { 'user_name':'ramu', 'pass_word':'ba1r'}
+##encoded_args = urllib.urlencode(query_args)
+##response = urllib2.urlopen(url_addr,encoded_args)
+##print response.read() 
+### it will return true(sucess) or false(invalid credentials )
+#8. User searching mechanisam
+##import urllib2
+##import urllib
+##url_addr = 'http://localhost:8000/apis/search'
+##query_args = { 'city':'hyderabab'}
+##encoded_args = urllib.urlencode(query_args)
+##response = urllib2.urlopen(url_addr+'?'+encoded_args)
+##print response.read()
+### we can improve this by improving criteria for all cases , 
+### for pagination we can add sort and size of results for each batch as we are getting generator from DB
+#9. Checking mongo status
+##import urllib2
+##import urllib
+##url_addr = 'http://localhost:8000/apis/mongostatus/'
+##response = urllib2.urlopen(url_addr)
+##print response.read()
+#10. listing given path
+##import urllib2
+##import urllib
+##url_addr = 'http://localhost:8000/apis/show_files/'
+##query_args = { 'path':'/home/rajarrv/Desktop/test'}#{'a':'a'}
+##encoded_args = urllib.urlencode(query_args)
+##response = urllib2.urlopen(url_addr,encoded_args)
+##print response.read()
+
+
